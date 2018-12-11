@@ -18,13 +18,8 @@ const prices = {
     "Cigarettes 20 Pack (Marlboro)": 480
 };
 
-// Map prices to goods
-// let inverted = {};
-// for (let key in prices) {
-//     inverted[prices[key]] = key;
-// }
-
 const evaluateAnswer = function (cost) {
+    document.getElementById('res-heading').innerText = 'That\'s the same as';
     // Map prices to goods
     let inverted = {};
     for (let key in prices) {
@@ -56,11 +51,17 @@ const evaluateAnswer = function (cost) {
     });
     let str = '';
     let count = 0;
+    let len = results.length;
+
     while (results.length > 0) {
         if (count === 3)
             str = str + '\n\n------ MORE -------';
         str = str + '\n\n' + results.pop();
         count++;
     }
-    document.getElementById('results').innerText = str;
+
+    if (len === 0)
+        document.getElementById('res-heading').innerText = 'That\'s the same as nothing I know :\(';
+    else
+        document.getElementById('results').innerText = str;
 }

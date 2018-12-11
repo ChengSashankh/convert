@@ -5,9 +5,9 @@
     </head>
     <body>
         <div id="box-dialogue" class="win">
-            <h1>Whats it worth in Kyoto?</h1>
+            <h1>What is it worth in Kyoto?</h1>
             ¥ <input type="number" id="val" max=10000 min=0>&nbsp<button onclick="evaluateAnswer(parseInt(document.getElementById('val').value, 10))">Check</button>
-            <h2>Thats the same as </h2>
+            <h2 id="res-heading"></h2>
             <div id="results" class="results"></div>
         </div>
         <p align="center">Please try values between ¥120 and ¥2000. Loading more data soon!</p>

@@ -1,16 +1,18 @@
 .win {
     resize: both;
     overflow: auto;
-    border: 2px solid black;
+    border: 2px dashed black;
+    background-color: #17252A;
+    color: white;   
+    border-radius: 30px;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     margin:0 auto;
-    width: 90%;    
-    height: 60%;
 }
 
 .results {
     resize: both;
     overflow: auto;
     margin: 10 auto;
+    font-size: 14px;
 }
