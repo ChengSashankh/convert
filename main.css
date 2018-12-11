@@ -1,0 +1,16 @@
+.win {
+    resize: both;
+    overflow: auto;
+    border: 2px solid black;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin:0 auto;
+    width: 90%;    
+    height: 60%;
+}
+
+.results {
+    resize: both;
+    overflow: auto;
+    margin: 10 auto;
+}
