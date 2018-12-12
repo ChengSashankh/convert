@@ -61,7 +61,7 @@ const evaluateAnswer = function (cost, area) {
                     count = count - 1;
                 resDisplayArea.innerText = results[count];
             };
-
+          
             if (len === 0) {
                 document.getElementById('res-heading').innerText = 'Please try a larger value than ' + cost;
                 resDisplayArea.innerText = ":(";
