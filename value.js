@@ -53,7 +53,7 @@ const evaluateAnswer = function (cost, area) {
         }
     });
 
-    let url = 'http://localhost:3000/data?area=';
+    let url = 'https://worthit-convert.herokuapp.com/data?area=';
     url = url + area;
     xhr.open("GET", url);
     xhr.send(null);

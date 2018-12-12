@@ -5,6 +5,10 @@ var fs = require('fs');
 var app = express();
 app.use(cors());
 
+app.get('/test', function(req, res) {
+    res.end('Test');
+})
+
 app.get('/data', function(req, res) {
     let country = req.query['area'];
     let fileName = 'prices_' + country + '.csv';
@@ -22,6 +26,6 @@ app.get('/data', function(req, res) {
     res.end(JSON.stringify(prices));
 });
 
-app.listen(3000, function () {
+app.listen($PORT, function () {
     console.log('Listening at port 3000');
 });
