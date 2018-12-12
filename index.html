@@ -6,7 +6,13 @@
     <body>
         <div id="box-dialogue" class="win">
             <h1>What is it worth in Kyoto?</h1>
-            ¥ <input type="number" id="val" max=10000 min=0>&nbsp<button onclick="evaluateAnswer(parseInt(document.getElementById('val').value, 10))">Check</button>
+            <select name="Area" id="area">
+                <option value="tk">Tokyo</option>
+                <option value="kyt">Kyoto</option>
+                <option value="sg">Singapore</option>
+                <option value="bbd">Barbados</option>
+            </select>
+            <input type="number" id="val" max=10000 min=0>&nbsp<button onclick="evaluateAnswer(parseInt(document.getElementById('val').value, 10), document.getElementById('area').value)">Check</button>
             <h2 id="res-heading"></h2>
             <div id="results" class="results"></div>
         </div>
