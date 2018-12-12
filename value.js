@@ -1,11 +1,11 @@
+var count = 0;
 const evaluateAnswer = function (cost, area) {
     var xhr = new XMLHttpRequest();
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
             let prices = JSON.parse(this.responseText);
-            
-            document.getElementById('res-heading').innerText = 'That\'s the same as';
+            document.getElementById('res-heading').innerText = 'For ' + cost + ' you can get';
             // Map prices to goods
             let inverted = {};
             for (let key in prices) {
@@ -36,20 +36,50 @@ const evaluateAnswer = function (cost, area) {
                 }
             });
             let str = '';
-            let count = 0;
             let len = results.length;
+            // let table = document.getElementById('resTable');
+            // table.innerHTML = "";
+            // while (results.length > 0) {
+            //     // Table Method
+            //     // let row = table.insertRow(0);
+            //     // let cell1 = row.insertCell(0);
+            //     // let cell2 = row.insertCell(1);
 
-            while (results.length > 0) {
-                if (count === 3)
-                    str = str + '\n\n------ MORE -------';
-                str = str + '\n\n' + results.pop();
-                count++;
+            //     // str = results.pop();
+            //     // cell1.innerText = str.split('x')[0];
+            //     // cell2.innerText = str.split('x')[1];
+            // }
+
+            // Span Method
+            let resDisplayArea = document.getElementById('resDispArea');
+            resDisplayArea.innerHTML = results[count];
+
+            document.getElementById('prev').onclick = function () {
+                if (count === 0)
+                    count = results.length - 1;
+                else
+                    count = count - 1;
+                resDisplayArea.innerText = results[count];
+            };
+
+            if (len === 0) {
+                document.getElementById('res-heading').innerText = 'Please try a larger value than ' + cost;
+                resDisplayArea.innerText = ":(";
             }
+            else {
+                document.getElementById('nex').onclick = function () {
+                    count = (count + 1) % (results.length);
+                    resDisplayArea.innerText = results[count];
+                };
 
-            if (len === 0)
-                document.getElementById('res-heading').innerText = 'That\'s the same as nothing I know :\(';
-            else
-                document.getElementById('results').innerText = str;
+                // let hRow = table.insertRow(0);
+                // let hCell = document.createElement('TH');
+                // hCell.innerHTML = 'What';
+                // hRow.appendChild(hCell);
+                // hCell = document.createElement('TH');
+                // hCell.innerHTML = 'How many';
+                // hRow.appendChild(hCell);
+            }
         }
     });
 
