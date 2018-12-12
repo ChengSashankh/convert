@@ -1,21 +1,31 @@
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="main.css">
-        <script src="value.js"></script>
-    </head>
-    <body>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="value.js"></script>
+</head>
+
+<body>
+    <div>
         <div id="box-dialogue" class="win">
-            <h1>What is it worth in Kyoto?</h1>
+            <img src="logo.jpeg"><a>Worth it?</a><br/>
             <select name="Area" id="area">
                 <option value="tk">Tokyo</option>
                 <option value="kyt">Kyoto</option>
                 <option value="sg">Singapore</option>
                 <option value="bbd">Barbados</option>
             </select>
-            <input type="number" id="val" max=10000 min=0>&nbsp<button onclick="evaluateAnswer(parseInt(document.getElementById('val').value, 10), document.getElementById('area').value)">Check</button>
-            <h2 id="res-heading"></h2>
-            <div id="results" class="results"></div>
+            <input type="number" class="inputBox" id="val" max=10000 min=0>&nbsp<button onclick="evaluateAnswer(parseInt(document.getElementById('val').value, 10), document.getElementById('area').value)">Check</button>
+            <p id="res-heading"></p>
+            <div id="results" class="results">
+                <!-- <table id="resTable" class="resultGrid"></table> -->
+                <span id="resDispArea" class="results"></span><br/><br/>
+                <button id="prev" class="previous-round">&#8249;</button><button id="nex" class="next-round">&#8250;</button>
+            </div>
+            </table>
         </div>
-        <p align="center">Please try values between ¥120 and ¥2000. Loading more data soon!</p>
-    </body>
+    </div>
+    <p align="center">If there are no results, try larger values!</p>
+</body>
+
 </html>
