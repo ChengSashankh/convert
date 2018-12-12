@@ -26,6 +26,6 @@ app.get('/data', function(req, res) {
     res.end(JSON.stringify(prices));
 });
 
-app.listen($PORT, function () {
+app.listen(process.env.PORT, function () {
     console.log('Listening at port 3000');
 });
