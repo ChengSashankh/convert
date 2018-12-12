@@ -54,30 +54,32 @@ const evaluateAnswer = function (cost, area) {
             let resDisplayArea = document.getElementById('resDispArea');
             resDisplayArea.innerHTML = results[count];
 
-            document.getElementById('prev').onclick = function() {
+            document.getElementById('prev').onclick = function () {
                 if (count === 0)
                     count = results.length - 1;
-                else 
+                else
                     count = count - 1;
                 resDisplayArea.innerText = results[count];
             };
+          
+            if (len === 0) {
+                document.getElementById('res-heading').innerText = 'Please try a larger value than ' + cost;
+                resDisplayArea.innerText = ":(";
+            }
+            else {
+                document.getElementById('nex').onclick = function () {
+                    count = (count + 1) % (results.length);
+                    resDisplayArea.innerText = results[count];
+                };
 
-            document.getElementById('nex').onclick = function() {
-                count = (count + 1) % (results.length);
-                resDisplayArea.innerText = results[count];
-            };
-
-            if (len === 0)
-                document.getElementById('res-heading').innerText = cost + ' is the same as nothing I know :\(';
-            // else
-                // document.getElementById('results').innerText = str;
-            let hRow = table.insertRow(0);
-            let hCell = document.createElement('TH');
-            hCell.innerHTML = 'What';
-            hRow.appendChild(hCell);
-            hCell = document.createElement('TH');
-            hCell.innerHTML = 'How many';
-            hRow.appendChild(hCell);
+                // let hRow = table.insertRow(0);
+                // let hCell = document.createElement('TH');
+                // hCell.innerHTML = 'What';
+                // hRow.appendChild(hCell);
+                // hCell = document.createElement('TH');
+                // hCell.innerHTML = 'How many';
+                // hRow.appendChild(hCell);
+            }
         }
     });
 
