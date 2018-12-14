@@ -8,3 +8,7 @@ For example, if you were new to Singapore and saw a toffee was priced at S$12, `
 ***
 
 ![Example use case](./example.png)
+
+***
+
+Courtesy: Data from numbeo.com/cost-of-living . Thank you!
