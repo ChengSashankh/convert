@@ -5,7 +5,7 @@ Ever travelled to a different country, and wondered if FC 10 (FC - Foreign Curre
 
 For example, if you were new to Singapore and saw a toffee was priced at S$12, `Worth it?` would tell you what else you could get with your 12 bucks, so you have an idea if its worth after all!
 
-Courtesy: Data from ![numbeo.com](https://www.numbeo.com) . Thank you!
+Courtesy: Data from [numbeo.com](https://www.numbeo.com) . Thank you!
 
 ***
 
